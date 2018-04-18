@@ -46,7 +46,7 @@
 			<div class="ui grid">
 				<div class="row">
 					<div class="seven wide middle aligned column">
-						<button class="ui big fluid button">
+						<button class="ui big fluid button" (click)="drawCard()">
 							Pick a card!
 						</button>
 					</div>
@@ -54,7 +54,7 @@
 						<div class="life-bar"></div>
 					</div>
 					<div class="seven wide middle aligned column">
-							You last drew: n/a
+							You last drew: {{ lastDrawnCard?.rank }} {{ lastDrawnCard?.suit }}
 					</div>
 				</div>
 			</div>
