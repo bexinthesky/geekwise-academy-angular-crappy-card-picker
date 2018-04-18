@@ -11,14 +11,19 @@ export class AppComponent implements OnInit {
 	// done as described in "app.html"; start by importing modules you need such as "./../classes/Deck"
 
 	public deck: Deck;
-	public lastDrawnCard:ICard;
+	public lastDrawnCard: ICard;
+	public userHand: ICard[];
 
 	public ngOnInit():void {
 		this.deck = new Deck();
+		this.userHand = []; 
 
 	}
 	public drawCard() { 
-		this.lastDrawnCard = this.deck.drawCard(); 
+		this.lastDrawnCard = this.deck.drawCard();
+		this.userHand.push(this.lastDrawnCard);
+		console.log(this.userHand);
+		
 	}
 
 	// My original code which worked but I was having trouble calling it correctly in the HTML
