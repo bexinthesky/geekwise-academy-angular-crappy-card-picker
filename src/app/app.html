@@ -61,8 +61,8 @@
 		</div>
 
 		<div *ngFor="let card of userHand" class="ui left floated compact center aligned segment card-in-hand">
-			<button class="ui large button">
-				<h2>{{ card.rank }} of {{ card.suit }}</h2>
+			<button (click)="returnCard(card)" class="ui large button">
+				<h2>{{ card.rank }}{{ card.suit }}</h2>
 				<span class="return">
 					RETURN
 					<i class="reply icon"></i>

@@ -19,11 +19,24 @@ export class AppComponent implements OnInit {
 		this.userHand = []; 
 
 	}
+
+	// method I used to draw a card from the deck
 	public drawCard() { 
 		this.lastDrawnCard = this.deck.drawCard();
 		this.userHand.push(this.lastDrawnCard);
 		console.log(this.userHand);
 		
+	}
+
+	// method I used to return my card back to my deck (thanks JR!!!!)
+	public returnCard(card:ICard) {
+		this.userHand.splice(this.userHand.indexOf(card),1);
+		this.deck.returnCardToDeck(card);
+	}
+
+	// method I injected into HTML to test the card value; once it worked, I created the returnCard method and replaced consoleCard with it in the HTML
+	public consoleCard(card:ICard) { 
+		console.log(card);
 	}
 
 	// My original code which worked but I was having trouble calling it correctly in the HTML
